@@ -148,18 +148,18 @@ export default function AgencyHeroPage() {
         <main className="w-full bg-white text-black selection:bg-black selection:text-white">
             <section className="relative w-full pt-12 md:pt-16">
                 <div className="w-full px-4 md:px-8 pb-0">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl pt-20 font-normal tracking-tight leading-[1.05]">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl pt-20 font-normal tracking-tight leading-[1.05]">
                         <span className="inline-block">Leading </span>{" "}
                         <span className="inline-block">Full-Service </span>{" "}
 
                         <Ticker
                             words={TICKER_WORDS_DESKTOP}
-                            textClassName="text-4xl md:text-6xl lg:text-7xl"
+                            textClassName="text-5xl md:text-7xl lg:text-8xl"
                             wrapperClassName="hidden md:inline-block"
                         />
                         <Ticker
                             words={TICKER_WORDS_MOBILE}
-                            textClassName="text-4xl"
+                            textClassName="text-5xl"
                             wrapperClassName="block md:hidden mt-2"
                         />
                     </h1>
