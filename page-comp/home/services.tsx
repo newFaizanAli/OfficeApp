@@ -1,10 +1,5 @@
 "use client";
 
-/**
- * ServicesSection
- * Recreation of the "Our Services" pinned / horizontal-pan section from
- * https://www.buzzinteractive.co/
- */
 
 import { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
@@ -255,7 +250,7 @@ export default function ServicesSection() {
                 </div>
                 <div
                     ref={trackRef}
-                    className="flex w-full flex-col gap-10 px-6 py-24 will-change-transform sm:px-10 md:px-16 lg:w-max lg:gap-14 lg:px-20"
+                    className="flex w-full flex-col gap-10 px-6 py-30 will-change-transform sm:px-10 md:px-16 lg:w-max lg:gap-14 lg:px-20"
                 >
                     <h2 className="max-w-none text-[clamp(2.5rem,6.5vw,6rem)] font-medium leading-[1.05] tracking-tight text-neutral-900 lg:whitespace-nowrap">
                         {HEADING_LINES.map((line, li) => (
@@ -277,7 +272,7 @@ export default function ServicesSection() {
                     <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-center lg:gap-8">
                         <p
                             ref={paragraphRef}
-                            className="max-w-[25rem] shrink-0 text-3xl leading-relaxed text-black"
+                            className="max-w-[25rem] shrink-0 text-2xl leading-relaxed text-black"
                         >
                             Big ideas. Loud design. Real results. You bring the vision.
                             We&apos;ll wire it into reality.
@@ -290,14 +285,14 @@ export default function ServicesSection() {
                                     ref={(el) => {
                                         if (el) cardWrapperEls.current.push(el);
                                     }}
-                                    className="w-full shrink-0 overflow-hidden rounded-3xl border-2 border-black bg-transparent p-12 sm:w-96 lg:w-[35rem]  mx-2"
+                                    className="w-full shrink-0 overflow-hidden rounded-3xl border-2 border-black bg-transparent p-8 sm:w-90 lg:w-[30rem]  mx-2"
                                 >
                                     <Link
                                         href={service.href}
                                         ref={(el) => {
                                             if (el) cardTitleEls.current.push(el);
                                         }}
-                                        className="mb-6 block text-4xl font-medium text-black"
+                                        className="mb-6 block text-3xl font-medium text-black"
                                     >
                                         {service.title}
                                     </Link>
@@ -312,7 +307,7 @@ export default function ServicesSection() {
                                             <Link
                                                 key={item.label}
                                                 href={item.href}
-                                                className="group flex items-center gap-3 text-2xl text-neutral-900 font-medium transition-colors hover:text-neutral-900"
+                                                className="group flex items-center gap-3 text-1xl text-neutral-900 font-medium transition-colors hover:text-neutral-900"
                                             >
                                                 <span className="h-0.5 w-0 bg-[#ff2fa8] transition-all duration-300 group-hover:w-5" />
                                                 {item.label}
