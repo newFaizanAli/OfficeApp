@@ -4,9 +4,7 @@ import SelectedWork from "./selected-work";
 import Services from "./services";
 import About from "./about";
 import Testimonial from "./testimonial";
-import BellowHero from "./bellow_hero";
-
 
 export {
-    Hero, BellowHero, Marquee, SelectedWork, Services, About, Testimonial
+    Hero, Marquee, SelectedWork, Services, About, Testimonial
 }

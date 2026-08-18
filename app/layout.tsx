@@ -35,9 +35,9 @@ export default function RootLayout({
         <Cursor />
         {children}
 
-        <div className="bg-white">
+        {/* <div className="bg-white">
           <Contact />
-        </div>
+        </div> */}
       </body>
     </html>
   );
