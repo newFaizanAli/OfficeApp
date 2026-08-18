@@ -9,7 +9,7 @@ import { useGSAP } from "@gsap/react";
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-export default function BellowHero() {
+export default function CoreIdentity() {
     const sectionRef = useRef<HTMLElement>(null);
     const cardsContainerRef = useRef<HTMLDivElement>(null);
 
