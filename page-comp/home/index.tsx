@@ -5,8 +5,8 @@ import Services from "./services";
 import About from "./about";
 import Testimonial from "./testimonial";
 import CoreIdentity from "./core-identity";
-import CorePillars from "./core-pillars";
+import Overview from "./overview";
 
 export {
-    Hero, CoreIdentity, CorePillars, Marquee, SelectedWork, Services, About, Testimonial
+    Hero, CoreIdentity, Overview, Marquee, SelectedWork, Services, About, Testimonial
 }

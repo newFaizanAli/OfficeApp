@@ -1,6 +1,6 @@
 "use client";
 
-import { About, CoreIdentity, CorePillars, Hero, Marquee, SelectedWork, Services, Testimonial } from "@/page-comp/home";
+import { About, CoreIdentity, Overview, Hero, Marquee, SelectedWork, Services, Testimonial } from "@/page-comp/home";
 
 export default function Home() {
 
@@ -8,7 +8,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Hero />
       <CoreIdentity />
-      <CorePillars />
+      <Overview />
       {/* <Marquee /> */}
       {/* <SelectedWork /> */}
       {/* <Services /> */}
