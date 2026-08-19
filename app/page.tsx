@@ -8,8 +8,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Hero />
       <CoreIdentity />
-      <CorePillars />
-      <Marquee />
+      {/* <CorePillars />
+      <Marquee /> */}
       {/* <SelectedWork /> */}
       {/* <Services /> */}
       {/* <About />

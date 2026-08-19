@@ -11,41 +11,70 @@ interface MarqueeItem {
 
 const items: MarqueeItem[] = [
     {
-        name: 'KFC',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67a4590d37d8e483e7efa7d2_Group%201.svg',
+        name: 'Huawei',
+        img: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/250px-Huawei_Standard_logo.svg.png',
     },
     {
-        name: 'Kiko Milano',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67a4590d9c2c6fea9a8d9687_Group%201171277368.svg',
+        name: 'Daraz',
+        img: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Daraz_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
     },
     {
-        name: 'Samad Group of Industries',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67a4590dda8a8731512717e3_Group.svg',
+        name: 'Casio',
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Casio_logo.svg/960px-Casio_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail',
     },
     {
-        name: 'Dominos',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/683860726aa71c003e4b55f0_Group%201171278730.svg',
+        name: 'Payoneer',
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Payoneer_logo.svg/1280px-Payoneer_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail',
     },
     {
-        name: 'Descon Engineering',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67c03e386a02d0f0cc42ce57_Descon_logo%201%20%281%29.svg',
+        name: 'WASA LDA',
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Lahore_Development_Authority_logo.svg/1280px-Lahore_Development_Authority_logo.svg.png',
     },
     {
-        name: 'Samsung',
+        name: 'Limelight',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeO6jKHDvVe4pgh-Xg77LCZDQpNANiL5mjuAJl9QvcO6FCPlqRmHq3BWQ&s=10',
+    },
+    {
+        name: 'Golf Green City',
+        img: '',
+    },
+    {
+        name: 'Mayfair',
         img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67a458f002189a2094f7ffb0_g20.svg',
     },
     {
-        name: 'Daily Deli',
+        name: 'Fiberlink',
         img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/683860728ca6d9755bd6e199_DD%201.svg',
     },
     {
-        name: 'Chat Pandas',
+        name: 'MidCity Lahore',
         img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/6838607259689358e61f33e3_Group%20%286%29.svg',
     },
     {
-        name: 'Lake City',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/68386072f416ce8217d6a9f6_Group%201171278731.svg',
+        name: 'Al Kareem City',
+        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67a4590d37d8e483e7efa7d2_Group%201.svg',
     },
+    {
+        name: 'ICI',
+        img: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/ICI_logo.svg',
+    },
+    {
+        name: 'CCL',
+        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67a4590dda8a8731512717e3_Group.svg',
+    },
+    {
+        name: 'OEM',
+        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/683860726aa71c003e4b55f0_Group%201171278730.svg',
+    },
+    {
+        name: 'Brewci',
+        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67c03e386a02d0f0cc42ce57_Descon_logo%201%20%281%29.svg',
+    },
+    {
+        name: 'Mojoxy',
+        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/683860728ca6d9755bd6e199_DD%201.svg',
+    },
+
 ];
 
 export default function Marquee(): React.JSX.Element {
