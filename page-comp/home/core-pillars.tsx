@@ -70,7 +70,7 @@ const bentoCards: BentoCard[] = [
     },
 ];
 
-function CorePillars() {
+function AnimatedSphere() {
     const meshRef = useRef<THREE.Mesh>(null);
 
     useFrame((state) => {
@@ -96,7 +96,7 @@ function CorePillars() {
     );
 }
 
-export default function WhatWeDoBento() {
+export default function CorePillars() {
     const sectionRef = useRef<HTMLDivElement>(null);
     const cardsRef = useRef<HTMLDivElement[]>([]);
 
