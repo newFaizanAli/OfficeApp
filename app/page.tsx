@@ -9,12 +9,12 @@ export default function Home() {
       <Hero />
       <CoreIdentity />
       <Overview />
-      {/* <Marquee /> */}
+      <Marquee />
       {/* <SelectedWork /> */}
       {/* <Services /> */}
-      {/* <About />
-      <Testimonial /> */}
-      {/* <ClosingBanner /> */}
+      {/* <About /> */}
+      {/* <Testimonial /> */}
+      <ClosingBanner />
     </div>
   );
 }

@@ -12,67 +12,67 @@ interface MarqueeItem {
 const items: MarqueeItem[] = [
     {
         name: 'Huawei',
-        img: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/250px-Huawei_Standard_logo.svg.png',
+        img: '/marquee/huawei.webp',
     },
     {
         name: 'Daraz',
-        img: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Daraz_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+        img: '/marquee/daraz.png',
     },
     {
         name: 'Casio',
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Casio_logo.svg/960px-Casio_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail',
+        img: '/marquee/casio.webp',
     },
     {
         name: 'Payoneer',
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Payoneer_logo.svg/1280px-Payoneer_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail',
+        img: '/marquee/payoneer.webp',
     },
     {
         name: 'WASA LDA',
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Lahore_Development_Authority_logo.svg/1280px-Lahore_Development_Authority_logo.svg.png',
+        img: '/marquee/lda.webp',
     },
     {
         name: 'Limelight',
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeO6jKHDvVe4pgh-Xg77LCZDQpNANiL5mjuAJl9QvcO6FCPlqRmHq3BWQ&s=10',
+        img: '/marquee/limelight.png',
     },
     {
         name: 'Golf Green City',
-        img: '',
+        img: '/marquee/golf-green.png',
     },
     {
         name: 'Mayfair',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67a458f002189a2094f7ffb0_g20.svg',
+        img: '/marquee/mayfair.png',
     },
     {
         name: 'Fiberlink',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/683860728ca6d9755bd6e199_DD%201.svg',
+        img: '/marquee/fiberlink.png',
     },
     {
         name: 'MidCity Lahore',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/6838607259689358e61f33e3_Group%20%286%29.svg',
+        img: '/marquee/midcity.png',
     },
     {
         name: 'Al Kareem City',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67a4590d37d8e483e7efa7d2_Group%201.svg',
+        img: '/marquee/al-kareem.png',
     },
-    {
-        name: 'ICI',
-        img: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/ICI_logo.svg',
-    },
-    {
-        name: 'CCL',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67a4590dda8a8731512717e3_Group.svg',
-    },
-    {
-        name: 'OEM',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/683860726aa71c003e4b55f0_Group%201171278730.svg',
-    },
+    // {
+    //     name: 'ICI',
+    //     img: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/ICI_logo.svg',
+    // },
+    // {
+    //     name: 'CCL',
+    //     img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67a4590dda8a8731512717e3_Group.svg',
+    // },
+    // {
+    //     name: 'OEM',
+    //     img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/683860726aa71c003e4b55f0_Group%201171278730.svg',
+    // },
     {
         name: 'Brewci',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/67c03e386a02d0f0cc42ce57_Descon_logo%201%20%281%29.svg',
+        img: '/marquee/brewci.jpg',
     },
     {
         name: 'Mojoxy',
-        img: 'https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/683860728ca6d9755bd6e199_DD%201.svg',
+        img: '/marquee/mojoxy.png',
     },
 
 ];

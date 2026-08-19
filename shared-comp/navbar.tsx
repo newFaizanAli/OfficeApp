@@ -80,7 +80,7 @@ export default function Navbar(): React.JSX.Element {
     };
 
     // Updated text color to solid black (text-black), increased size to text-xl, and bold font-semibold
-    const navLinkClasses = "font-extrabold text-black hover:text-gray-900 transition-all text-xl px-5 py-2.5 rounded-full bg-transparent border border-transparent hover:border-black";
+    const navLinkClasses = "font-extralight text-black hover:text-gray-900 transition-all text-xl px-5 py-2.5 rounded-full bg-transparent border border-transparent hover:border-black";
 
     return (
         <header id="navbar" className="ftop-0 z-50 w-full bg-white">
