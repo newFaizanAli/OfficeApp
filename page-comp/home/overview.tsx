@@ -225,7 +225,7 @@ export default function ServicesSection() {
                     ref={trackRef}
                     className="flex w-full flex-col gap-10 px-6 py-30 will-change-transform sm:px-10 md:px-16 lg:w-max lg:gap-14 lg:px-20"
                 >
-                    <h2 className="max-w-none text-[clamp(2rem,4.5vw,4.2rem)] font-medium leading-[1.05] tracking-tight text-neutral-900 lg:whitespace-nowrap">
+                    <h2 className="max-w-none text-[clamp(2rem,4.5vw,4.2rem)] font-extralight leading-[1.05] tracking-tight text-neutral-900 lg:whitespace-nowrap">
                         {HEADING_LINES.map((line, li) => (
                             <span key={li} className="block py-1">
                                 {line.map((word, wi) => (

@@ -159,7 +159,7 @@ export default function CoreIdentity() {
                             Our Philosophy
                         </span>
                     </div>
-                    <h2 className="font-sans text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl md:text-5xl leading-[1.1]">
+                    <h2 className="font-extralight text-3xl  tracking-tight text-neutral-900 sm:text-4xl md:text-5xl leading-[1.1]">
                         Built on the convergence of design and digitalisation.
                     </h2>
                 </div>

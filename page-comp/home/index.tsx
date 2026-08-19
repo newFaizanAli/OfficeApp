@@ -6,7 +6,9 @@ import About from "./about";
 import Testimonial from "./testimonial";
 import CoreIdentity from "./core-identity";
 import Overview from "./overview";
+import ClosingBanner from "./closing-banner";
+
 
 export {
-    Hero, CoreIdentity, Overview, Marquee, SelectedWork, Services, About, Testimonial
+    Hero, CoreIdentity, Overview, Marquee, SelectedWork, Services, About, Testimonial, ClosingBanner
 }

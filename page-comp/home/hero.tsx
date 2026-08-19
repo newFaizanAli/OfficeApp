@@ -142,7 +142,7 @@ export default function AgencyHeroPage() {
         <main className="w-full bg-white text-black selection:bg-black selection:text-white">
             <section className="relative w-full pt-10 md:pt-12">
                 <div className="w-full px-4 md:px-8 pb-10">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl pt-16 font-normal tracking-tight leading-[1.05]">
+                    <h1 className="font-extralight tracking-tight text-4xl md:text-6xl lg:text-7xl pt-16 leading-[1.05]">
                         <span className="inline-block">Shaping the </span>{" "}
                         <span className="inline-block">Brands of </span>{" "}
 
