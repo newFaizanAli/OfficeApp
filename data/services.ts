@@ -1,85 +1,90 @@
-export interface ServiceItem {
-  label: string;
-  href: string;
-}
+import { Service } from "@/types";
 
-export interface ServiceCard {
-  title: string;
-  href?: string; // some card titles are links, some are plain <p>
-  items: ServiceItem[];
-}
-
-export const servicesData: ServiceCard[] = [
+export const SERVICES: Service[] = [
   {
-    title: "Designing",
-    href: "/design-services",
-    items: [
-      { label: "Branding", href: "/design-services" },
-      { label: "Logo", href: "/design-services" },
-      { label: "Print Design", href: "/design-services" },
-      { label: "Motion Graphics", href: "/design-services" },
-      { label: "UI/UX", href: "/ui-ux-design-services" },
+    index: "01",
+    title: "Product Hunting & Positioning",
+    tagline: "We find the opportunity before the noise.",
+    bullets: [
+      "Product research & validation",
+      "Market gaps & trend hunting",
+      "Competitive analysis",
+      "Product-market fit strategy",
+      "Clear positioning & differentiation",
     ],
+    closing: "Built to solve real problems — not just look good.",
+    image: "https://picsum.photos/seed/service-01/1200/1400",
   },
   {
-    title: "CMS Websites",
-    href: "/cms-development-services",
-    items: [
-      { label: "Webflow", href: "/cms-development-services" },
-      { label: "Framer", href: "/cms-development-services" },
-      { label: "Wordpress", href: "/wordpress-development-services" },
-      { label: "Shopify", href: "/shopify-development-services" },
-      { label: "Ecommerce Solutions", href: "/ecommerce-website-development" },
+    index: "02",
+    title: "Brand Development & Identity",
+    tagline: "We build brands around products meant to last.",
+    bullets: [
+      "Product-centric brand identity",
+      "Naming, messaging & brand voice",
+      "Visual identity systems",
+      "Packaging & product design direction",
+      "Scalable brand guidelines",
     ],
+    closing: "Brands that feel intentional, not accidental.",
+    image: "https://picsum.photos/seed/service-02/1200/1400",
   },
   {
-    title: "Product Development",
-    // this one is a <p>, not a link, in the source markup
-    items: [
-      { label: "Web Apps", href: "/web-development-services" },
-      {
-        label: "React Native Development",
-        href: "/react-native-app-development-services",
-      },
-      { label: "PHP Development", href: "/php-development-services" },
-      {
-        label: "MERN Stack Development",
-        href: "/software-development-services",
-      },
-      { label: "QA Solutions", href: "/software-testing-services" },
+    index: "03",
+    title: "Product Launch & Campaigning",
+    tagline: "We don't just launch — we create momentum.",
+    bullets: [
+      "Go-to-market strategy",
+      "Launch campaigns & storytelling",
+      "Influencer & creator activations",
+      "Digital launch rollouts",
+      "Post-launch growth campaigns",
     ],
+    closing: "Because the market remembers strong entrances.",
+    image: "https://picsum.photos/seed/service-03/1200/1400",
   },
   {
-    title: "Mobile Apps",
-    href: "/mobile-app-development-services",
-    items: [
-      { label: "Mobile Apps", href: "/mobile-app-development-services" },
-      { label: "IOS Mobile Apps", href: "/ios-app-development-services" },
-      {
-        label: "Android Mobile Apps",
-        href: "/android-app-development-services",
-      },
-      {
-        label: "React Native Mobile Apps",
-        href: "/react-native-app-development-services",
-      },
-      { label: "Mobile APP ASO", href: "/mobile-app-development-services" },
+    index: "04",
+    title: "Pre & Post Production",
+    tagline: "Everything your product needs to be seen, heard, and felt.",
+    bullets: [
+      "Product photography & videography",
+      "Commercials, reels & ad creatives",
+      "Founder & brand films",
+      "Editing, motion & post-production",
+      "In-house Infinity Studio access",
     ],
+    closing: "Production without dependency. Creativity without limits.",
+    image: "https://picsum.photos/seed/service-04/1200/1400",
   },
   {
-    title: "Marketing",
-    // also a <p>, not a link
-    items: [
-      { label: "SEO", href: "/seo-services" },
-      { label: "SEM", href: "/sem-services" },
-      { label: "Social Media Marketing", href: "/social-media-services" },
-      { label: "PPC Marketing", href: "/social-media-services" },
-      { label: "On-Page Optimization", href: "/social-media-services" },
+    index: "05",
+    title: "Power Marketing",
+    tagline: "Marketing built to perform — not just exist.",
+    bullets: [
+      "Performance marketing & paid ads",
+      "Product-focused content systems",
+      "Social media growth strategies",
+      "Funnels, conversions & optimization",
+      "Data-driven scaling",
     ],
+    closing: "Visibility is power — when it converts.",
+    image: "https://picsum.photos/seed/service-05/1200/1400",
+  },
+  {
+    index: "06",
+    title: "Brand Elevation & Funding",
+    tagline: "We elevate brands — and back potential.",
+    bullets: [
+      "Founder & business coaching",
+      "Brand maturity & scale planning",
+      "Pitch decks & investor storytelling",
+      "Strategic partnerships & mentorship",
+      "Selective startup funding & support",
+    ],
+    closing: "We don't just advise growth. We enable it.",
+    image: "https://picsum.photos/seed/service-06/1200/1400",
   },
 ];
 
-export const headingLines: string[][] = [
-  ["We’re", "a", "digital", "&", "tech", "agency"],
-  ["making", "brands", "people", "remember"],
-];
+export const STUDIO_NOTE = "Infinity Studio";

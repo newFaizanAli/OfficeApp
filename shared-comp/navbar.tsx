@@ -39,6 +39,12 @@ export default function Navbar(): React.JSX.Element {
                     >
                         Services
                     </Link>
+                    <Link
+                        href="/process"
+                        className={navLinkClasses}
+                    >
+                        Process
+                    </Link>
                     <Link href="/buzz-portfolio" className={navLinkClasses}>
                         Case Studies
                     </Link>
@@ -95,6 +101,13 @@ export default function Navbar(): React.JSX.Element {
                         className="text-xl font-semibold text-black hover:text-gray-900 px-4 py-2.5 rounded-lg bg-transparent border border-transparent hover:border-black transition-all"
                     >
                         Services
+                    </Link>
+                    <Link
+                        href="/process"
+                        onClick={closeMobileMenu}
+                        className="text-xl font-semibold text-black hover:text-gray-900 px-4 py-2.5 rounded-lg bg-transparent border border-transparent hover:border-black transition-all"
+                    >
+                        Process
                     </Link>
                     <Link
                         href="/buzz-portfolio"

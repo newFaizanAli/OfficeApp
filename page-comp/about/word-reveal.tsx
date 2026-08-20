@@ -1,7 +1,13 @@
-const WordRevealParagraph = ({ text }: { text: string }) => {
+const WordRevealParagraph = ({
+    text,
+    className = "",
+}: {
+    text: string;
+    className?: string;
+}) => {
     const words = text.split(" ");
     return (
-        <p className="text-4xl leading-relaxed font-normal">
+        <p className={`scroll-reveal-block leading-relaxed font-normal ${className}`}>
             {words.map((word, i) => (
                 <span
                     key={i}
