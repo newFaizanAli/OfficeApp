@@ -602,11 +602,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="mx-auto w-full max-w-7xl relative z-10">
-                    <div className="hero-eyebrow flex items-center gap-3 text-xs md:text-sm tracking-[0.2em] uppercase text-zinc-500 font-medium mb-8">
-                        <span>Home</span>
-                        <span className="text-zinc-300">/</span>
-                        <span className="text-zinc-950">Services</span>
-                    </div>
+
 
                     <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] font-normal leading-[1.08] tracking-tight text-zinc-950 max-w-4xl [transform-style:preserve-3d]">
                         {heroWords("We build brands by thinking beyond visuals and campaigns.")}
@@ -704,8 +700,8 @@ export default function ServicesPage() {
 
                                                 <span
                                                     className={`shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${isActive
-                                                            ? "border-zinc-950 bg-zinc-950 text-white rotate-45"
-                                                            : "border-zinc-300 text-zinc-400 group-hover:border-zinc-500"
+                                                        ? "border-zinc-950 bg-zinc-950 text-white rotate-45"
+                                                        : "border-zinc-300 text-zinc-400 group-hover:border-zinc-500"
                                                         }`}
                                                 >
                                                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
