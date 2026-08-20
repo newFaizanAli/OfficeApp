@@ -9,6 +9,31 @@ import { useGSAP } from "@gsap/react";
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
+// Word-by-word reveal paragraph (same pattern as AboutSection's WordRevealParagraph)
+const WordRevealParagraph = ({
+    text,
+    className = "",
+    wordClassName = "text-neutral-500",
+}: {
+    text: string;
+    className?: string;
+    wordClassName?: string;
+}) => {
+    const words = text.split(" ");
+    return (
+        <p className={className}>
+            {words.map((word, i) => (
+                <span
+                    key={i}
+                    className={`reveal-word inline-block mr-[0.3em] ${wordClassName}`}
+                >
+                    {word}
+                </span>
+            ))}
+        </p>
+    );
+};
+
 export default function CoreIdentity() {
     const sectionRef = useRef<HTMLElement>(null);
     const cardsContainerRef = useRef<HTMLDivElement>(null);
@@ -86,9 +111,28 @@ export default function CoreIdentity() {
                 }
             });
         }
+
+        // 3. WORD REVEAL COLOR ANIMATION (Synthesis Banner paragraph)
+        // Words start dim (text-neutral-500) and brighten to near-white
+        // as the banner scrolls through the viewport — same mechanic as
+        // AboutSection's WordRevealParagraph.
+        const revealWords = gsap.utils.toArray<HTMLElement>(".reveal-word");
+        if (revealWords.length) {
+            gsap.to(revealWords, {
+                color: "#f5f5f5", // neutral-100
+                stagger: 0.08,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".pp-synthesis",
+                    start: "top 85%",
+                    end: "bottom 55%",
+                    scrub: 0.6,
+                },
+            });
+        }
     }, { scope: sectionRef });
 
-    // 3. ENHANCED 3D MOUSE TILT & DYNAMIC LIGHTING HANDLER
+    // 4. ENHANCED 3D MOUSE TILT & DYNAMIC LIGHTING HANDLER
     const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
         const card = e.currentTarget;
         const rect = card.getBoundingClientRect();
@@ -142,7 +186,7 @@ export default function CoreIdentity() {
     return (
         <section
             ref={sectionRef}
-            className="relative bg-white px-6 py-20 sm:px-10 lg:py-28 xl:py-32 overflow-hidden text-neutral-900 selection:bg-neutral-900 selection:text-white"
+            className="relative bg-white px-6 py-10 sm:px-10 lg:py-18 xl:py-22 overflow-hidden text-neutral-900 selection:bg-neutral-900 selection:text-white"
         >
             {/* Ambient Ultra-Clean Backlight Aura for 8D Depth */}
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-neutral-200/40 via-neutral-100/70 to-transparent rounded-full blur-[140px] pointer-events-none" />
@@ -259,18 +303,22 @@ export default function CoreIdentity() {
                 </div>
 
                 {/* Synthesis Banner */}
-                <div className="pp-synthesis relative mt-16 overflow-hidden rounded-[2rem] bg-neutral-900 p-10 text-white shadow-[0_25px_80px_rgba(0,0,0,0.15)] sm:p-12 lg:p-16 opacity-0 border border-neutral-800">
+                <div className="pp-synthesis relative mt-16 overflow-hidden rounded-[2rem] bg-black p-10 text-white shadow-[0_25px_80px_rgba(0,0,0,0.15)] sm:p-12 lg:p-16 opacity-0 border border-neutral-800">
                     {/* Dramatic background cinematic glows */}
-                    <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-neutral-700/30 blur-[100px] pointer-events-none" />
-                    <div className="absolute -left-24 -bottom-24 h-80 w-80 rounded-full bg-neutral-800/30 blur-[100px] pointer-events-none" />
+                    <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-neutral-600/30 blur-[100px] pointer-events-none" />
+                    <div className="absolute -left-24 -bottom-24 h-80 w-80 rounded-full bg-neutral-700/30 blur-[100px] pointer-events-none" />
 
                     <div className="relative z-10 max-w-3xl mx-auto text-center">
                         <span className="font-mono text-[11px] font-bold tracking-[0.25em] text-neutral-400 block mb-4 uppercase">
                             The Convergence
                         </span>
-                        <p className="text-xl font-light leading-relaxed text-neutral-100 sm:text-2xl md:text-3xl">
-                            Together, they define how we digitalise businesses: transforming brands into structured, performance-driven, future-ready digital products that grow with clarity and intent.
-                        </p>
+
+                        <WordRevealParagraph
+                            text="Together, they define how we digitalise businesses: transforming brands into structured, performance-driven, future-ready digital products that grow with clarity and intent."
+                            className="text-xl font-light leading-relaxed sm:text-2xl md:text-3xl"
+                            wordClassName="text-neutral-500"
+                        />
+
                         <button className="group relative mt-10 px-8 py-3.5 bg-white text-neutral-950 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] overflow-hidden transition-all duration-500 hover:bg-neutral-200 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] active:scale-95">
                             <span className="relative z-10">Explore Our Process</span>
                         </button>

@@ -68,7 +68,7 @@ const items: MarqueeItem[] = [
     // },
     {
         name: 'Brewci',
-        img: '/marquee/brewci.jpg',
+        img: '/marquee/brewci.png',
     },
     {
         name: 'Mojoxy',

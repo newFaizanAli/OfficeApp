@@ -1,87 +1,20 @@
 "use client";
 
-import React, { useRef, useEffect, useMemo } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Float } from "@react-three/drei";
+import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function DynamicSculpture() {
-    const groupRef = useRef<THREE.Group>(null);
-    const { pointer } = useThree();
-
-    useFrame((state) => {
-        if (!groupRef.current) return;
-        const t = state.clock.getElapsedTime();
-
-        // Smooth interactive rotation following mouse pointer
-        groupRef.current.rotation.y = THREE.MathUtils.lerp(
-            groupRef.current.rotation.y,
-            pointer.x * 0.6 + t * 0.1,
-            0.05
-        );
-        groupRef.current.rotation.x = THREE.MathUtils.lerp(
-            groupRef.current.rotation.x,
-            -pointer.y * 0.6 + Math.sin(t * 0.5) * 0.2,
-            0.05
-        );
-    });
-
-    const metalMaterial = useMemo(
-        () =>
-            new THREE.MeshPhysicalMaterial({
-                color: new THREE.Color("#0a0a0a"),
-                roughness: 0.15,
-                metalness: 0.95,
-                clearcoat: 1.0,
-                clearcoatRoughness: 0.1,
-            }),
-        []
-    );
-
-    const glassMaterial = useMemo(
-        () =>
-            new THREE.MeshPhysicalMaterial({
-                color: new THREE.Color("#ffffff"),
-                roughness: 0.1,
-                metalness: 0.1,
-                transmission: 0.9,
-                thickness: 1.2,
-                ior: 1.5,
-            }),
-        []
-    );
-
-    return (
-        <group ref={groupRef}>
-            <Float speed={3} rotationIntensity={1.2} floatIntensity={1.5}>
-                <mesh material={metalMaterial} scale={1.2}>
-                    <octahedronGeometry args={[1, 0]} />
-                </mesh>
-            </Float>
-            <Float speed={4} rotationIntensity={1.5} floatIntensity={2}>
-                <mesh position={[1.8, -0.8, -0.5]} material={glassMaterial} scale={0.6}>
-                    <icosahedronGeometry args={[1, 0]} />
-                </mesh>
-            </Float>
-            <Float speed={2.5} rotationIntensity={0.8} floatIntensity={1}>
-                <mesh position={[-1.8, 1, -0.5]} material={metalMaterial} scale={0.5}>
-                    <boxGeometry args={[1, 1, 1]} />
-                </mesh>
-            </Float>
-        </group>
-    );
-}
-
 export default function ClosingBanner() {
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLHeadingElement>(null);
     const ctaRef = useRef<HTMLDivElement>(null);
+    const canvasContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        // --- 1. GSAP Scroll Animations for UI ---
         const ctx = gsap.context(() => {
             gsap.fromTo(
                 headingRef.current,
@@ -117,7 +50,154 @@ export default function ClosingBanner() {
             );
         }, sectionRef);
 
-        return () => ctx.revert();
+        // --- 2. Vanilla Three.js Setup ---
+        const container = canvasContainerRef.current;
+        if (!container) return;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(
+            50,
+            container.clientWidth / container.clientHeight,
+            0.1,
+            1000
+        );
+        camera.position.set(0, 0, 6);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        // Lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+        scene.add(ambientLight);
+
+        const dirLight = new THREE.DirectionalLight(0xffffff, 2);
+        dirLight.position.set(5, 5, 5);
+        scene.add(dirLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        pointLight.position.set(-5, -5, -2);
+        scene.add(pointLight);
+
+        // Materials
+        const metalMaterial = new THREE.MeshPhysicalMaterial({
+            color: new THREE.Color("#0a0a0a"),
+            roughness: 0.15,
+            metalness: 0.95,
+            clearcoat: 1.0,
+            clearcoatRoughness: 0.1,
+        });
+
+        const glassMaterial = new THREE.MeshPhysicalMaterial({
+            color: new THREE.Color("#ffffff"),
+            roughness: 0.1,
+            metalness: 0.1,
+            transmission: 0.9,
+            thickness: 1.2,
+            ior: 1.5,
+        });
+
+        // Group container for interactive rotation
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // Meshes / Geometries
+        const octahedron = new THREE.Mesh(
+            new THREE.OctahedronGeometry(1, 0),
+            metalMaterial
+        );
+        octahedron.scale.setScalar(1.2);
+        group.add(octahedron);
+
+        const icosahedron = new THREE.Mesh(
+            new THREE.IcosahedronGeometry(1, 0),
+            glassMaterial
+        );
+        icosahedron.position.set(1.8, -0.8, -0.5);
+        icosahedron.scale.setScalar(0.6);
+        group.add(icosahedron);
+
+        const box = new THREE.Mesh(
+            new THREE.BoxGeometry(1, 1, 1),
+            metalMaterial
+        );
+        box.position.set(-1.8, 1, -0.5);
+        box.scale.setScalar(0.5);
+        group.add(box);
+
+        // --- 3. Animations (Replacing <Float> and useFrame) ---
+        // Store initial positions/rotations for floating offsets
+        const floatItems = [
+            { mesh: octahedron, speed: 3, rotInt: 1.2, floatInt: 1.5, baseY: octahedron.position.y },
+            { mesh: icosahedron, speed: 4, rotInt: 1.5, floatInt: 2, baseY: icosahedron.position.y },
+            { mesh: box, speed: 2.5, rotInt: 0.8, floatInt: 1, baseY: box.position.y },
+        ];
+
+        // Mouse tracking normalized (-1 to 1)
+        const mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+        const handleMouseMove = (e: MouseEvent) => {
+            mouse.targetX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouse.targetY = -(e.clientY / window.innerHeight) * 2 + 1;
+        };
+        window.addEventListener("mousemove", handleMouseMove);
+
+        const clock = new THREE.Clock();
+        let animationFrameId: number;
+
+        const animate = () => {
+            animationFrameId = requestAnimationFrame(animate);
+            const t = clock.getElapsedTime();
+
+            // Smooth pointer interpolation
+            mouse.x += (mouse.targetX - mouse.x) * 0.05;
+            mouse.y += (mouse.targetY - mouse.y) * 0.05;
+
+            // Main group rotation (matching original lerp logic)
+            group.rotation.y = THREE.MathUtils.lerp(
+                group.rotation.y,
+                mouse.x * 0.6 + t * 0.1,
+                0.05
+            );
+            group.rotation.x = THREE.MathUtils.lerp(
+                group.rotation.x,
+                -mouse.y * 0.6 + Math.sin(t * 0.5) * 0.2,
+                0.05
+            );
+
+            // Simulate <Float> behaviors individually per mesh
+            floatItems.forEach((item, index) => {
+                // Floating offset simulation
+                item.mesh.position.y = item.baseY + Math.sin(t * item.speed + index) * 0.15 * item.floatInt;
+                // Rotation intensity simulation
+                item.mesh.rotation.x = t * 0.3 * item.rotInt;
+                item.mesh.rotation.y = t * 0.2 * item.rotInt;
+            });
+
+            renderer.render(scene, camera);
+        };
+        animate();
+
+        // Window resize handler
+        const handleResize = () => {
+            if (!container) return;
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        };
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("resize", handleResize);
+            cancelAnimationFrame(animationFrameId);
+            ctx.revert();
+            renderer.dispose();
+            if (container.contains(renderer.domElement)) {
+                container.removeChild(renderer.domElement);
+            }
+        };
     }, []);
 
     const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -176,18 +256,11 @@ export default function ClosingBanner() {
                 </div>
             </div>
 
-            {/* Interactive 3D Background Canvas */}
-            <div className="absolute inset-0 z-0 pointer-events-auto opacity-90">
-                <Canvas
-                    camera={{ position: [0, 0, 6], fov: 50 }}
-                    gl={{ antialias: true, alpha: true }}
-                >
-                    <ambientLight intensity={1.2} />
-                    <directionalLight position={[5, 5, 5]} intensity={2} />
-                    <pointLight position={[-5, -5, -2]} intensity={1} />
-                    <DynamicSculpture />
-                </Canvas>
-            </div>
+            {/* Vanilla Three.js Canvas Container */}
+            <div
+                ref={canvasContainerRef}
+                className="absolute inset-0 z-0 pointer-events-auto opacity-90"
+            />
 
             {/* Bottom Section Bar linking into Footer */}
             <div className="max-w-7xl mx-auto w-full flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-400 tracking-wider pt-8 border-t border-neutral-100 z-10">

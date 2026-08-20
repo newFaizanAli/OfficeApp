@@ -24,7 +24,6 @@ export default function Contact() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Form inputs scroll entry
             gsap.fromTo(
                 '.form-input-wrap',
                 { opacity: 0, y: 30 },
@@ -44,13 +43,10 @@ export default function Contact() {
             const vectors = submitBtnRef.current?.querySelectorAll('.submit-ab-img');
 
             if (submitBtnRef.current && vectors) {
-                // Initial State: Sub icons start below the button and transparent
                 gsap.set(vectors, { opacity: 0, y: 60, scale: 0.8 });
 
-                // Hover Sequence Timeline: Continuous smooth flow bottom -> middle -> top hide
                 const hoverTl = gsap.timeline({ paused: true, repeat: -1 });
 
-                // 1. Ek ek karke icons neeche se reveal hongay (Bottom Entry)
                 hoverTl.to(vectors, {
                     opacity: 1,
                     y: 0,
@@ -60,7 +56,6 @@ export default function Contact() {
                     ease: 'power3.out',
                 }, 0);
 
-                // 2. Continuous flow ke liye icons upar ki taraf move hote hue hide hongay (Top Exit)
                 hoverTl.to(vectors, {
                     opacity: 0,
                     y: -60,
@@ -78,7 +73,6 @@ export default function Contact() {
 
                 const handleMouseLeave = () => {
                     hoverTl.pause();
-                    // Smooth exit to initial hidden position
                     gsap.to(vectors, {
                         opacity: 0,
                         y: 60,
@@ -120,7 +114,8 @@ export default function Contact() {
         setTimeout(() => setStatus('success'), 1200);
     };
 
-    const inputStyle = "w-full bg-transparent border-b-2 border-zinc-700 focus:border-white text-white text-xl md:text-3xl py-6 px-0 rounded-none outline-none transition-colors placeholder:text-zinc-500 focus:placeholder:text-zinc-400 font-medium";
+    // Scaled down text sizes for inputs to prevent layout blowup on production builds
+    const inputStyle = "w-full bg-transparent border-b-2 border-zinc-700 focus:border-white text-white text-base md:text-xl py-4 px-0 rounded-none outline-none transition-colors placeholder:text-zinc-500 focus:placeholder:text-zinc-400 font-medium";
 
     return (
         <section
@@ -130,14 +125,14 @@ export default function Contact() {
         >
             <div className="max-w-[1600px] mx-auto space-y-16 w-full">
                 <div>
-                    <h2 className="text-4xl md:text-9xl tracking-tight text-white mb-6 pt-24">
+                    <h2 className="text-4xl md:text-7xl lg:text-8xl tracking-tight text-white mb-6 pt-24">
                         Let&apos;s Connect
                     </h2>
                 </div>
 
                 <div className="w-full">
                     {status === 'success' ? (
-                        <div className="p-8 bg-zinc-900 border border-zinc-800 rounded-xl text-center text-emerald-400 text-2xl font-medium">
+                        <div className="p-8 bg-zinc-900 border border-zinc-800 rounded-xl text-center text-emerald-400 text-xl font-medium">
                             Thank you! Your submission has been received!
                         </div>
                     ) : (
@@ -146,8 +141,7 @@ export default function Contact() {
                             onSubmit={handleSubmit}
                             className="space-y-12 w-full max-w-7xl"
                         >
-                            {/* Inputs */}
-                            <div className="flex flex-col gap-10">
+                            <div className="flex flex-col gap-8">
                                 <div className="form-input-wrap">
                                     <input
                                         type="text"
@@ -235,14 +229,13 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            {/* Services Options */}
                             <div className="space-y-4 pt-6">
-                                <p className="text-zinc-400 font-medium text-lg">I am interested in</p>
-                                <div className="flex flex-wrap gap-4">
+                                <p className="text-zinc-400 font-medium text-base md:text-lg">I am interested in</p>
+                                <div className="flex flex-wrap gap-3">
                                     {['Website', 'SEO', 'UI/UX', 'Mobile App', 'Web App', 'Other'].map((item) => (
                                         <label
                                             key={item}
-                                            className={`cursor-pointer px-6 py-3 rounded-full border text-base md:text-lg transition-all ${formData.services.includes(item)
+                                            className={`cursor-pointer px-5 py-2.5 rounded-full border text-sm md:text-base transition-all ${formData.services.includes(item)
                                                 ? 'bg-white text-black border-white'
                                                 : 'bg-transparent border-zinc-800 text-zinc-300 hover:border-zinc-600'
                                                 }`}
@@ -259,14 +252,13 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            {/* Budget Options */}
                             <div className="space-y-4 pt-4">
-                                <p className="text-zinc-400 font-medium text-lg">My budget is</p>
-                                <div className="flex flex-wrap gap-4">
+                                <p className="text-zinc-400 font-medium text-base md:text-lg">My budget is</p>
+                                <div className="flex flex-wrap gap-3">
                                     {['$2,000 - $5,000', '$5,000 - $10,000', '$10,000 +'].map((b) => (
                                         <label
                                             key={b}
-                                            className={`cursor-pointer px-6 py-3 rounded-full border text-base md:text-lg transition-all ${formData.budget === b
+                                            className={`cursor-pointer px-5 py-2.5 rounded-full border text-sm md:text-base transition-all ${formData.budget === b
                                                 ? 'bg-white text-black border-white'
                                                 : 'bg-transparent border-zinc-800 text-zinc-300 hover:border-zinc-600'
                                                 }`}
@@ -285,21 +277,19 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            {/* Submit Button */}
                             <div className="pt-8 w-full">
                                 <div
                                     ref={submitBtnRef}
-                                    className="submit-button-wrap relative w-full h-24 md:h-28 rounded-full bg-[#ff007f] overflow-hidden flex items-center justify-center cursor-pointer group select-none"
+                                    className="submit-button-wrap relative w-full h-20 md:h-24 rounded-full bg-[#ff007f] overflow-hidden flex items-center justify-center cursor-pointer group select-none"
                                 >
                                     <button
                                         type="submit"
                                         disabled={status === 'submitting'}
-                                        className="relative z-20 bg-transparent text-white font-medium text-2xl md:text-3xl tracking-wide outline-none cursor-pointer"
+                                        className="relative z-20 bg-transparent text-white font-medium text-xl md:text-2xl tracking-wide outline-none cursor-pointer"
                                     >
                                         {status === 'submitting' ? 'Please wait...' : 'Submit'}
                                     </button>
 
-                                    {/* Vector Blobs */}
                                     <div className="submit-ab-img _1 absolute -left-6 -top-12 pointer-events-none z-10">
                                         <img
                                             src="https://cdn.prod.website-files.com/669e3c3f4fc4539c5469bdda/68345f4bba8769ca3f7ee85e_Vector%20(11).webp"
@@ -341,15 +331,14 @@ export default function Contact() {
                     )}
                 </div>
 
-                {/* Footer Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-16 border-t border-zinc-800 text-xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-16 border-t border-zinc-800 text-base md:text-lg">
                     <div className="space-y-3">
-                        <h3 className="text-base font-semibold text-white">Lahore</h3>
-                        <p className="text-zinc-400 leading-relaxed">
+                        <h3 className="text-sm md:text-base font-semibold text-white">Lahore</h3>
+                        <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
                             4th Floor, Plaza # 63, C Block,<br />
                             CCA, Phase 6. DHA. Lahore. Pakistan.
                         </p>
-                        <div className="flex flex-col space-y-1">
+                        <div className="flex flex-col space-y-1 text-sm md:text-base">
                             <a href="tel:+923491466556" className="text-zinc-300 hover:text-white transition-colors">
                                 +92-349-1466556
                             </a>
@@ -359,19 +348,14 @@ export default function Contact() {
                         </div>
                     </div>
 
-
-
-
-
                     <div className="flex flex-col justify-between space-y-6">
-                        <div className="flex flex-col space-y-2">
+                        <div className="flex flex-col space-y-2 text-sm md:text-base">
                             <a href="/privacy" className="text-zinc-400 hover:text-white transition-colors">Privacy Policy</a>
                             <a href="/terms-of-use" className="text-zinc-400 hover:text-white transition-colors">Terms Of Use</a>
                             <a href="/careers" className="text-zinc-400 hover:text-white transition-colors">Careers</a>
                         </div>
 
-                        <div className="flex items-center gap-4 text-xl font-medium">
-
+                        <div className="flex items-center gap-4 text-base font-medium">
                             <a href="https://www.linkedin.com/company/buzz-interactive/" target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
                             <a href="https://www.instagram.com/buzzinteractive" target="_blank" rel="noreferrer" className="hover:underline">Instagram</a>
                         </div>
