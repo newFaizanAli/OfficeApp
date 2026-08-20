@@ -361,7 +361,7 @@ export default function WhoWeAreSec() {
                         <div className="founder-portrait rounded-[2.5rem] overflow-hidden bg-zinc-100 min-h-[420px] lg:min-h-[520px] [transform-style:preserve-3d]">
                             <img
                                 src="https://picsum.photos/seed/founder-portrait/900/1100"
-                                alt="Ahmed Amim Malik, Founder of Palette & Pixel"
+                                alt="Ahmed Amin Malik, Founder of Palette & Pixel"
                                 className="w-full h-full object-cover grayscale"
                             />
                         </div>
@@ -369,7 +369,7 @@ export default function WhoWeAreSec() {
                         <div className="flex flex-col justify-between gap-12">
                             <div>
                                 <h3 className="text-3xl md:text-5xl font-normal tracking-tight text-zinc-950 mb-2">
-                                    Ahmed Amim Malik
+                                    Ahmed Amin Malik
                                 </h3>
                                 <p className="text-sm md:text-base tracking-[0.15em] uppercase text-zinc-500 mb-8">
                                     Founder
@@ -432,7 +432,7 @@ export default function WhoWeAreSec() {
                                     What we learned building brands&hellip; became the reason we rebuilt the system.
                                 </p>
                                 <footer className="mt-8 text-zinc-500 text-sm md:text-base tracking-[0.15em] uppercase">
-                                    Ahmed Amim Malik &mdash; Founder, Palette &amp; Pixel
+                                    Ahmed Amin Malik &mdash; Founder, Palette &amp; Pixel
                                 </footer>
                             </blockquote>
                         </TiltCard>
