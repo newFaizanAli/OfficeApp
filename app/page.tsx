@@ -1,6 +1,6 @@
 "use client";
 
-import { About, CoreIdentity, Overview, Hero, Marquee, SelectedWork, Services, Testimonial, ClosingBanner } from "@/page-comp/home";
+import { CoreIdentity, Overview, Hero, Marquee, ClosingBanner } from "@/page-comp/home";
 
 export default function Home() {
 
