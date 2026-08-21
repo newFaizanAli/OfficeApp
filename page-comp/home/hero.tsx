@@ -3,6 +3,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -162,19 +163,19 @@ export default function AgencyHeroPage() {
                         We turn ideas into products, products into brands, and brands into systems built to scale.
                     </p>
 
-                    <div className="mt-6 flex flex-wrap items-center gap-3">
-                        <a
-                            href="#contact"
-                            className="rounded-full bg-black px-5 py-3 text-xs md:text-sm font-medium text-white transition-opacity hover:opacity-80"
+                    <div className="mt-6 flex flex-wrap items-center gap-3 relative z-30">
+                        <Link
+                            href="/contact"
+                            className="rounded-full bg-black px-5 py-3 text-xs md:text-sm font-medium text-white transition-opacity hover:opacity-80 cursor-pointer"
                         >
                             Let’s Build Together
-                        </a>
-                        <a
-                            href="#work"
-                            className="rounded-full border border-black/20 px-5 py-3 text-xs md:text-sm font-medium text-black transition-colors hover:border-black"
+                        </Link>
+                        <Link
+                            href={'/services'}
+                            className="rounded-full border border-black/20 px-5 py-3 text-xs md:text-sm font-medium text-black transition-colors hover:border-black cursor-pointer"
                         >
-                            Explore Our Work
-                        </a>
+                            Explore Our Services
+                        </Link>
                     </div>
                 </div>
 
