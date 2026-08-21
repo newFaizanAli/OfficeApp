@@ -154,9 +154,9 @@ export default function ContactContent() {
                 <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-16 lg:gap-24">
                     {/* Left column — intro + contact details */}
                     <div>
-                        <span className="text-xs uppercase tracking-[0.3em] text-neutral-500 font-normal block mb-6">
+                        {/* <span className="text-xs uppercase tracking-[0.3em] text-neutral-500 font-normal block mb-6">
                             Contact / Let&apos;s Build
-                        </span>
+                        </span> */}
 
                         <h1
                             ref={headingRef}
