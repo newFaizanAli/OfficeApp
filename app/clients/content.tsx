@@ -204,9 +204,9 @@ export default function ClientContent() {
                             Trusted Partnerships Grid
                         </h2>
                     </div>
-                    <span className="text-xs uppercase tracking-widest text-neutral-700 font-normal">
+                    {/* <span className="text-xs uppercase tracking-widest text-neutral-700 font-normal">
                         [Hover to inspect logos]
-                    </span>
+                    </span> */}
                 </div>
 
                 <div
