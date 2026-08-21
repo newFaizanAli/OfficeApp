@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MagneticButton, HeroMesh, MediaPanel } from "@/page-comp/services";
 import { SERVICES, STUDIO_NOTE } from "@/data/services";
+import { useRouter } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -15,6 +16,7 @@ export default function ServicesContent() {
     const capabilitiesRef = useRef<HTMLDivElement>(null);
     const ctaRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const router = useRouter();
 
     /* Hero entrance, on load rather than on scroll */
     useEffect(() => {
@@ -290,9 +292,7 @@ export default function ServicesContent() {
 
                         <MagneticButton
                             className="relative z-10 mt-12 inline-flex items-center gap-3 bg-white text-zinc-950 rounded-full px-8 py-4 text-base md:text-lg font-normal"
-                            onClick={() => {
-                                /* wire to your contact route / form */
-                            }}
+                            onClick={() => router.push('/contact')}
                         >
                             Start a project
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

@@ -5,6 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -319,9 +320,9 @@ export default function CoreIdentity() {
                             wordClassName="text-neutral-500"
                         />
 
-                        <button className="group relative mt-10 px-8 py-3.5 bg-white text-neutral-950 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] overflow-hidden transition-all duration-500 hover:bg-neutral-200 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] active:scale-95">
+                        <Link href={'/process'} className="group relative mt-10 px-8 py-3.5 bg-white text-neutral-950 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] overflow-hidden transition-all duration-500 hover:bg-neutral-200 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] active:scale-95">
                             <span className="relative z-10">Explore Our Process</span>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
