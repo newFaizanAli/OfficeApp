@@ -1,76 +1,37 @@
-export const stages = [
+export const funnelStages = [
     {
         letter: "A",
-        number: "01",
         title: "Acquisition",
-        description:
-            "We create the systems that put your brand in front of the right people and generate meaningful attention.",
-        whatWeDo: [
-            "Marketplace optimization",
-            "Ratings & reviews",
-            "Paid advertising",
-            "Digital & traditional marketing",
-        ],
-        measure: "Traffic",
+        whatWeDo: "Marketplace optimization, ratings & reviews, paid advertising, and digital/traditional marketing.",
+        whatWeMeasure: "Traffic.",
+        media: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
     },
     {
         letter: "A",
-        number: "02",
         title: "Activation",
-        description:
-            "We turn attention into meaningful action through frictionless experiences, clear positioning, and stronger conversion paths.",
-        whatWeDo: [
-            "Customer onboarding",
-            "Landing pages",
-            "Homepage optimization",
-            "Product features",
-            "USP clarity",
-        ],
-        measure: "Registrations & transaction volume",
+        whatWeDo: "Customer onboarding, landing pages, homepage optimization, product features, and USP clarity.",
+        whatWeMeasure: "Registrations and transaction volume.",
+        media: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
     },
     {
         letter: "R",
-        number: "03",
         title: "Retention",
-        description:
-            "We build repeat behavior through intelligent communication, loyalty systems, and re-engagement campaigns.",
-        whatWeDo: [
-            "Loyalty campaigns",
-            "Push notifications",
-            "Email flows",
-            "Re-engagement ads",
-            "Subscription campaigns powered by Go High Level",
-        ],
-        measure: "Clientele",
+        whatWeDo: "Loyalty campaigns, push notifications, email flows, re-engagement ads, and subscription campaigns powered by Go High Level.",
+        whatWeMeasure: "Clientele.",
+        media: "https://images.unsplash.com/photo-1533750349077-cdcd106d86b2?q=80&w=1200&auto=format&fit=crop",
     },
     {
         letter: "R",
-        number: "04",
         title: "Referral",
-        description:
-            "We turn satisfied customers into an engine for credibility, reviews, sharing, and community growth.",
-        whatWeDo: [
-            "Contact list integration",
-            "Contests",
-            "Review prompts",
-            "Sharing mechanics",
-            "Community engagement",
-        ],
-        measure: "Credibility, reviews & plans",
+        whatWeDo: "Contact list integration, contests, review prompts, sharing mechanics, and community engagement.",
+        whatWeMeasure: "Credibility, reviews, and plans.",
+        media: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
     },
     {
         letter: "R",
-        number: "05",
         title: "Revenue",
-        description:
-            "We engineer the commercial layer that converts accumulated momentum into measurable business results.",
-        whatWeDo: [
-            "Sales & promos",
-            "Product value chain",
-            "Subscriptions",
-            "Third parties",
-            "Resellers",
-        ],
-        measure: "Sales",
+        whatWeDo: "Sales & promos, product value chain, subscriptions, third parties, and resellers.",
+        whatWeMeasure: "Sales.",
+        media: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop",
     },
 ];

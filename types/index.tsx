@@ -7,13 +7,16 @@ export type Service = {
     image: string;
 };
 
-
-export interface Stage {
-    letter: string;
-    index: number; // position within AARRR, used for the 3D ring highlight (0-4)
+export type CompanyItem = {
     name: string;
-    whatWeDo: string[];
-    measure: string;
-    image: string; // TEMP: replace with your own media
+    img: string;
 }
-;
+
+// export interface Stage {
+//     letter: string;
+//     index: number; // position within AARRR, used for the 3D ring highlight (0-4)
+//     name: string;
+//     whatWeDo: string[];
+//     measure: string;
+//     image: string; // TEMP: replace with your own media
+// };

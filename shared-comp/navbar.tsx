@@ -45,15 +45,13 @@ export default function Navbar(): React.JSX.Element {
                     >
                         Process
                     </Link>
-                    <Link href="/buzz-portfolio" className={navLinkClasses}>
-                        Case Studies
+                    <Link
+                        href="/clients"
+                        className={navLinkClasses}
+                    >
+                        Clients
                     </Link>
-                    <Link href="/blog" className={navLinkClasses}>
-                        Blog
-                    </Link>
-                    <Link href="/contact" className={navLinkClasses}>
-                        Contact Us
-                    </Link>
+
                 </nav>
 
                 {/* Right CTA Button & Mobile Toggle */}
@@ -66,7 +64,7 @@ export default function Navbar(): React.JSX.Element {
                             <span className="absolute w-2 h-2 bg-green-400 rounded-full animate-ping" />
                             <span className="relative w-2 h-2 bg-green-500 rounded-full" />
                         </div>
-                        <span>Lets Work</span>
+                        <span>Let's Build</span>
                     </Link>
 
                     <button
@@ -110,28 +108,16 @@ export default function Navbar(): React.JSX.Element {
                         Process
                     </Link>
                     <Link
-                        href="/buzz-portfolio"
+                        href="/clients"
                         onClick={closeMobileMenu}
                         className="text-xl font-semibold text-black hover:text-gray-900 px-4 py-2.5 rounded-lg bg-transparent border border-transparent hover:border-black transition-all"
                     >
-                        Case Studies
+                        Clients
                     </Link>
-                    <Link
-                        href="/blog"
-                        onClick={closeMobileMenu}
-                        className="text-xl font-semibold text-black hover:text-gray-900 px-4 py-2.5 rounded-lg bg-transparent border border-transparent hover:border-black transition-all"
-                    >
-                        Blog
-                    </Link>
-                    <Link
-                        href="/contact"
-                        onClick={closeMobileMenu}
-                        className="text-xl font-semibold text-black hover:text-gray-900 px-4 py-2.5 rounded-lg bg-transparent border border-transparent hover:border-black transition-all"
-                    >
-                        Contact Us
-                    </Link>
+
+
                     <Link href="/contact" onClick={closeMobileMenu} className="mt-2 w-full py-3.5 rounded-full bg-black text-white text-center font-semibold text-lg">
-                        Lets Work
+                        Let's Build
                     </Link>
                 </div>
             )}

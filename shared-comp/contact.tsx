@@ -3,7 +3,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 
-export default function Contact() {
+// Footer
+export default function Footer() {
     const containerRef = useRef<HTMLDivElement>(null);
     const formRef = useRef<HTMLFormElement>(null);
     const submitBtnRef = useRef<HTMLDivElement>(null);
@@ -126,7 +127,7 @@ export default function Contact() {
             <div className="max-w-[1600px] mx-auto space-y-16 w-full">
                 <div>
                     <h2 className="text-4xl md:text-7xl lg:text-8xl tracking-tight text-white mb-6 pt-24">
-                        Let&apos;s Connect
+                        Let&apos;s Build
                     </h2>
                 </div>
 

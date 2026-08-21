@@ -131,7 +131,7 @@ export default function Contact() {
             <div className="max-w-[1600px] mx-auto space-y-16 w-full">
                 <div>
                     <h2 className="text-4xl md:text-9xl tracking-tight text-white mb-6 pt-24">
-                        Let&apos;s Connect
+                        Let&apos;s Build
                     </h2>
                 </div>
 
